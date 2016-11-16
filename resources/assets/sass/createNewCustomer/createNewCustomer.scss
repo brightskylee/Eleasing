@@ -1,0 +1,42 @@
+@import "../fonts";
+@import "../variables";
+
+#contact-selection {
+  min-height: 85px;
+  margin-bottom: 20px;
+}
+
+.contact-type {
+  width: 150px;
+  position: relative;
+  float: left;
+  border: 2px solid $brookside-green;
+  border-radius: 4px;
+  margin-right: 10px;
+  background: white;
+}
+
+.contact-type label:hover {
+  cursor: pointer;
+}
+
+.contact-type label {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.contact-type input {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.contact-type h3 {
+  text-align: center;
+}
+
+.contact-icon {
+  font-size: 30px;
+}

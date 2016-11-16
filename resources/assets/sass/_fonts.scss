@@ -1,0 +1,34 @@
+// Fonts ===================
+@font-face {
+  font-family: BlackJack;
+  src: url('/../../assets/fonts/blackjack.TTF');
+}
+$blackjack-sans-serif: "BlackJack", sans-serif;
+
+@font-face {
+  font-family: NeutraTextBook;
+  src: url('/../../assets/fonts/neutraTextBook.otf');
+}
+$neutra-text-book-sans-serif: "NeutraTextBook", sans-serif;
+
+@font-face {
+  font-family: ChaletLondonSeventy;
+  src: url('/../../assets/fonts/chaletLondonSeventy.otf');
+}
+$chalet-london-seventy: "ChaletLondonSeventy";
+
+@font-face {
+  font-family: ChaletLondonEighty;
+  src: url('/../../assets/fonts/chaletLondonEighty.otf');
+}
+$chalet-london-eighty: "ChaletLondonEighty";
+
+.blackjack {
+  font-family: $blackjack-sans-serif;
+}
+.chalet-london-seventy {
+  font-family: $chalet-london-seventy;
+}
+.chalet-london-eighty {
+  font-family: $chalet-london-eighty;
+}
