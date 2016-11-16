@@ -37,7 +37,29 @@ input:active, input:focus, textarea:active, textarea:focus {
 }
 
 button {
-  display: block;
+  color: white;
+  background: $brookside-blue !important;
+  text-transform: uppercase;
+  padding: 3px 20px 0 20px;
+  height: 40px;
+  font-size: 14px;
+  margin: 10px 10px 0 0 !important;
+  box-shadow: 0 5px #27496d !important;
+  border: 0 transparent !important;
+  border-radius: 4px;
+  min-width: 175px;
+  transition: background-color .4s;
+}
+
+button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #417cb8 !important;
+  box-shadow: 0 5px #27496d !important;
+}
+
+button:active, button:focus {
+  outline: 0;
 }
 
 .clear {
@@ -50,6 +72,14 @@ button {
 
 .charcoal {
   color: $charcoal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.neutra-bold {
+  font-family: $neutra-text-bold-sans-serif;
 }
 
 .container {
@@ -69,6 +99,7 @@ button {
   background: -webkit-linear-gradient(top, #3d6db2 0%,#2c4e7f 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #3d6db2 0%,#2c4e7f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d6db2', endColorstr='#2c4e7f',GradientType=0 ); /* IE6-9 */
+  box-shadow: 0 3px 3px #888888;
 }
 
 #header-logo {
@@ -110,5 +141,7 @@ button {
 }
 
 .form-sub-heading {
-  font-size: 20px;
+  font-size: 22px;
+  text-align: center;
+  color: $brookside-dark-blue;
 }

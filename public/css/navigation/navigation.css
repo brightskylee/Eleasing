@@ -92,7 +92,7 @@ input[type="text"]:hover {
   padding-right: 32px; }
 
 #cssmenu > ul > li:hover > a {
-  color: #C5CD4D !important; }
+  color: #B1CC25 !important; }
 
 #cssmenu li.has-sub::after {
   display: block;

@@ -31,6 +31,13 @@ elixir(function(mix) {
 
     //User-created JS files to include
     mix.scripts([
-        'js/main.js'
-    ]);
+        'main.js' //resource location
+    ],
+    'public/js/main.js' //destination
+    );
+
+    mix.scripts([
+        'createNewCustomer/createNewCustomer.js'
+    ],
+    'public/js/createNewCustomer/createNewCustomer.js');
 });
