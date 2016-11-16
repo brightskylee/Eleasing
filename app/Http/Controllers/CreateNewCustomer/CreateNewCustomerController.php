@@ -14,4 +14,8 @@ class CreateNewCustomerController extends Controller
     public function contactInformation() {
         return view('createNewCustomer.contactInformation');
     }
+
+    public function customerPreferences() {
+        echo "Customer preferences reached.";
+    }
 }
