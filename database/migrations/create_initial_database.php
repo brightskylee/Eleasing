@@ -21,15 +21,34 @@ class CreateCustomerTable extends Migration
          * birthday
          *
          */
+        
+        $this->upCustomers();
+        $this->upAuthentication();
+        $this->upDocuments();
+    }
+    
+    function upCustomers()
+    {
         Schema::create('customers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('first_name');
-            $table->string('middle_initial', 1);
+            $table->string('middle_initial', 1)->nullable();
             $table->string('last_name');
-            $table->string('gender');
-            $table->date('birthday');
+            $table->string('gender')->nullable();
+            $table->date('birthday')->nullable();
             $table->timestamps();
         });
+    }
+
+    function upAuthentication()
+    {
+
+    }
+
+
+    function upDocuments()
+    {
+
     }
 
     /**
