@@ -5,6 +5,6 @@
 @stop
 
 @section('content')
-    <h1 class="form-header"><i class="fa fa-address-card charcoal" aria-hidden="true"></i> Contact Information</h1>
+    <h1 class="form-header"><i class="fa fa-phone charcoal" aria-hidden="true"></i> Phone Inquiry</h1>
     <hr>
 @stop

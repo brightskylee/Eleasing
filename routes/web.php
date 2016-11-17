@@ -14,4 +14,8 @@
 //Create New Customer
 Route::get('/', 'CreateNewCustomer\CreateNewCustomerController@start');
 Route::get('/createNewCustomer', 'CreateNewCustomer\CreateNewCustomerController@start');
-Route::post('/createNewCustomer/contactInformation', 'CreateNewCustomer\CreateNewCustomerController@contactInformation');
+Route::post('/createNewCustomer/directForm', 'CreateNewCustomer\CreateNewCustomerController@directForm');
+
+Route::get('/createNewCustomer/emailInquiry', 'CreateNewCustomer\CreateNewCustomerController@emailInquiry');
+Route::get('/createNewCustomer/phoneInquiry', 'CreateNewCustomer\CreateNewCustomerController@phoneInquiry');
+Route::get('/createNewCustomer/specialEventInquiry', 'CreateNewCustomer\CreateNewCustomerController@specialEventInquiry');
