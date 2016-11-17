@@ -64,15 +64,19 @@
   color: maroon !important;
 }
 
-#inquiry-selection {
+#inquiry-selection, #leasing-selection {
+  display: none;
   width: 324px;
   height: 100px;
-  display: block;
   margin: 0 auto;
+}
+
+#inquiry-heading, #leasing-heading {
+  display: none;
 }
 
 #start-submit {
   display: block;
-  margin: 40px auto 0 auto !important;
+  margin: 20px auto 0 auto !important;
   width: 200px;
 }
