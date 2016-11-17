@@ -8,6 +8,12 @@ var inquiryHeadingSelector = "#inquiry-heading";
 var leasingSelectionSelector = "#leasing-selection";
 var leasingHeadingSelector = "#leasing-heading";
 
+$(window).bind("pageshow", function() {
+    //Determines type of customer contact selected
+    var customerContactSelected = $('input[name=customerContact]:checked', startFormSelector).val();
+    determineContactSelectedInput(customerContactSelected);
+});
+
 $(document).ready(function() {
     $('input').on('change', function() {
         //Empty any form errors that have already been displayed
@@ -18,24 +24,7 @@ $(document).ready(function() {
     $('#contact-selection input').on('change', function() {
         //Determines type of customer contact selected
         var customerContactSelected = $('input[name=customerContact]:checked', startFormSelector).val();
-
-        //Based on the contact event selected, display the appropriate inputs
-        switch(customerContactSelected) {
-            case 'email':
-            case 'phone':
-            case 'specialEvent':
-                //Show inquiry-specific inputs
-                showInquiryInput();
-                //Deselect and hide leasing form if shown
-                hideLeasingInput();
-                break;
-            case 'walkIn':
-                //Show leasing-specific inputs
-                showLeasingInput();
-                //Deselect and hide inquiry form if shown
-                hideInquiryInput();
-                break;
-        }
+        determineContactSelectedInput(customerContactSelected);
     });
 
     //When start form is submit, check for required inputs
@@ -83,6 +72,26 @@ $(document).ready(function() {
         }
     });
 });
+
+function determineContactSelectedInput(customerContactSelected) {
+    //Based on the contact event selected, display the appropriate inputs
+    switch(customerContactSelected) {
+        case 'email':
+        case 'phone':
+        case 'specialEvent':
+            //Show inquiry-specific inputs
+            showInquiryInput();
+            //Deselect and hide leasing form if shown
+            hideLeasingInput();
+            break;
+        case 'walkIn':
+            //Show leasing-specific inputs
+            showLeasingInput();
+            //Deselect and hide inquiry form if shown
+            hideInquiryInput();
+            break;
+    }
+}
 
 function clearRadioButtonSelectedGroup(radioButtonGroupName) {
     $('input:radio[name=' + radioButtonGroupName + ']').each(function () {
