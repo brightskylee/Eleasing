@@ -1,5 +1,7 @@
 @extends('layout')
-
+@section('title')
+    <title>Unqualified Inquiry</title>
+@stop
 @section('pageLinks')
     <link rel="stylesheet" href="{{ elixir('css/createNewCustomer/createNewCustomer.css') }}">
     <script src="{{ elixir("js/createNewCustomer/createNewCustomer.js") }}"></script>
