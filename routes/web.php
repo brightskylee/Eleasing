@@ -15,4 +15,3 @@
 Route::get('/', 'CreateNewCustomer\CreateNewCustomerController@start');
 Route::get('/createNewCustomer', 'CreateNewCustomer\CreateNewCustomerController@start');
 Route::post('/createNewCustomer/contactInformation', 'CreateNewCustomer\CreateNewCustomerController@contactInformation');
-Auth::routes();

@@ -12,6 +12,12 @@ $blackjack-sans-serif: "BlackJack", sans-serif;
 $neutra-text-book-sans-serif: "NeutraTextBook", sans-serif;
 
 @font-face {
+  font-family: NeutraTextBold;
+  src: url('/../../assets/fonts/neutraTextBold.otf');
+}
+$neutra-text-bold-sans-serif: "NeutraTextBold";
+
+@font-face {
   font-family: ChaletLondonSeventy;
   src: url('/../../assets/fonts/chaletLondonSeventy.otf');
 }

@@ -2,25 +2,26 @@
 @import "../variables";
 
 #contact-selection {
-  min-height: 85px;
-  margin-bottom: 20px;
+  min-height: 100px;
+  width: 648px;
+  margin: 0 auto 20px auto;
 }
 
 .contact-type {
   width: 150px;
   position: relative;
   float: left;
-  border: 1px solid darkgray;
+  border: 1px solid lightgray;
   border-radius: 4px;
   margin-right: 10px;
-  background: rgba(245,245,245,1);
-  background: -moz-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(212,212,212,1) 88%, rgba(212,212,212,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,245,245,1)), color-stop(88%, rgba(212,212,212,1)), color-stop(100%, rgba(212,212,212,1)));
-  background: -webkit-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(212,212,212,1) 88%, rgba(212,212,212,1) 100%);
-  background: -o-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(212,212,212,1) 88%, rgba(212,212,212,1) 100%);
-  background: -ms-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(212,212,212,1) 88%, rgba(212,212,212,1) 100%);
-  background: linear-gradient(to bottom, rgba(245,245,245,1) 0%, rgba(212,212,212,1) 88%, rgba(212,212,212,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#d4d4d4', GradientType=0 );
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(209,207,209,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(209,207,209,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(209,207,209,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(209,207,209,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(209,207,209,1) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(209,207,209,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d1cfd1', GradientType=1 );
 }
 
 .contact-type label:hover {
@@ -47,5 +48,35 @@
 
 .contact-icon {
   font-size: 30px;
+  font-weight: bold;
   color: $charcoal;
+}
+
+#inquiry-heading {
+  margin-top: 40px;
+}
+
+.fa-check-circle {
+  color: darkgreen !important;
+}
+
+.fa-times {
+  color: maroon !important;
+}
+
+#inquiry-selection, #leasing-selection {
+  display: none;
+  width: 324px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+#inquiry-heading, #leasing-heading {
+  display: none;
+}
+
+#start-submit {
+  display: block;
+  margin: 20px auto 0 auto !important;
+  width: 200px;
 }

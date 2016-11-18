@@ -8,6 +8,10 @@
   src: url("/../../assets/fonts/neutraTextBook.otf"); }
 
 @font-face {
+  font-family: NeutraTextBold;
+  src: url("/../../assets/fonts/neutraTextBold.otf"); }
+
+@font-face {
   font-family: ChaletLondonSeventy;
   src: url("/../../assets/fonts/chaletLondonSeventy.otf"); }
 
@@ -25,21 +29,23 @@
   font-family: "ChaletLondonEighty"; }
 
 #contact-selection {
-  min-height: 85px;
-  margin-bottom: 20px; }
+  min-height: 100px;
+  width: 648px;
+  margin: 0 auto 20px auto; }
 
 .contact-type {
   width: 150px;
   position: relative;
   float: left;
-  border: 1px solid darkgray;
+  border: 1px solid lightgray;
   border-radius: 4px;
   margin-right: 10px;
-  background: whitesmoke;
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, whitesmoke), color-stop(88%, #d4d4d4), color-stop(100%, #d4d4d4));
-  background: -webkit-linear-gradient(top, whitesmoke 0%, #d4d4d4 88%, #d4d4d4 100%);
-  background: linear-gradient(to bottom, whitesmoke 0%, #d4d4d4 88%, #d4d4d4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#d4d4d4', GradientType=0 ); }
+  background: white;
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #d1cfd1));
+  background: -webkit-linear-gradient(-45deg, white 0%, #f6f6f6 47%, #d1cfd1 100%);
+  background: -webkit-linear-gradient(315deg, white 0%, #f6f6f6 47%, #d1cfd1 100%);
+  background: linear-gradient(135deg, white 0%, #f6f6f6 47%, #d1cfd1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d1cfd1', GradientType=1 ); }
 
 .contact-type label:hover {
   cursor: pointer; }
@@ -61,6 +67,30 @@
 
 .contact-icon {
   font-size: 30px;
+  font-weight: bold;
   color: #34282C; }
+
+#inquiry-heading {
+  margin-top: 40px; }
+
+.fa-check-circle {
+  color: darkgreen !important; }
+
+.fa-times {
+  color: maroon !important; }
+
+#inquiry-selection, #leasing-selection {
+  display: none;
+  width: 324px;
+  height: 100px;
+  margin: 0 auto; }
+
+#inquiry-heading, #leasing-heading {
+  display: none; }
+
+#start-submit {
+  display: block;
+  margin: 20px auto 0 auto !important;
+  width: 200px; }
 
 /*# sourceMappingURL=createNewCustomer.css.map */
