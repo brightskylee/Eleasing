@@ -40,6 +40,14 @@ class AddRelationshipToInitialDatabase extends Migration
         $this->addInquiryTypeIdToInquiry();
         $this->addInquiryIdToInquiryEvent();
 
+        $this->upEmailAddressCustomerPivotTable();
+        $this->addEmailTypeIdToEmail();
+        $this->upPhoneNumberCustomerPivotTable();
+        $this->addPhoneTypeIdToPhone();
+
+
+
+
     }
 
     private function upCustomerPreferenceCustomerPivotTable()
@@ -150,6 +158,46 @@ class AddRelationshipToInitialDatabase extends Migration
         });
     }
 
+    private function upEmailAddressCustomerPivotTable(){
+        Schema::create('_customers_email_addresses', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->bigInteger('customer_id',false, true);
+            $table->bigInteger('email_address_id', false, true);
+
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('email_address_id')->references('id')->on('email_addresses')->onDelete('cascade');
+        });
+    }
+
+
+    private function addEmailTypeIdToEmail()
+    {
+        Schema::table('email_addresses', function(Blueprint $table){
+            $table->bigInteger('email_address_type_id', false, true);
+            $table->foreign('email_addresses_email_address_type_id')->references('id')->on('email_address_type');
+        });
+    }
+    
+
+    private function upPhoneNumberCustomerPivotTable(){
+        Schema::create('_customers_phone_numbers', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->bigInteger('customer_id',false, true);
+            $table->bigInteger('phone_number_id', false, true);
+
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('phone_number_id')->references('id')->on('inquiry')->onDelete('cascade');
+        });
+    }
+
+    private function addPhoneTypeIdToPhone()
+    {
+        Schema::table('phone_numbers', function(Blueprint $table){
+            $table->bigInteger('phone_number_type_id', false, true);
+            $table->foreign('phone_numbers_phone_number_type_id')->references('id')->on('phone_number_type');
+        });
+    }
+
 
 
     /**
@@ -182,5 +230,19 @@ class AddRelationshipToInitialDatabase extends Migration
         Schema::dropIfExists('_customer_school');
         Schema::dropIfExists('_customer_marketing_outreach');
         Schema::dropIfExists('_customer_customer_preference');
+        
+        Schema::dropIfExists('_customers_phone_numbers');
+        Schema::table('phone_numbers', function(Blueprint $table){
+            $table->dropForeign('phone_numbers_phone_number_type_id_foreign');
+            $table->dropColumn('phone_number_type_id');
+        });
+        
+        Schema::dropIfExists('_customers_email_addresses');
+        Schema::table('email_addresses', function(Blueprint $table){
+            $table->dropForeign('email_addresses_email_address_type_id_foreign');
+            $table->dropColumn('email_address_type_id');
+        });
+        
+        
     }
 }

@@ -41,6 +41,12 @@ class CreateInitialDatabase extends Migration
         $this->upSchools();
         $this->upOrganizations();
         $this->upBrandExposures();
+
+        $this->upEmailAddresses();
+        $this->upEmailAddressTypes();
+        $this->upPhoneNumbers();
+        $this->upPhoneNumberTypes();
+        
     }
 
     private function upCustomers()
@@ -138,6 +144,43 @@ class CreateInitialDatabase extends Migration
         });
     }
 
+    private function upEmailAddresses()
+    {
+        Schema::create('email_addresses', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string("email_address");
+            $table->boolean("is_active")->default(1);
+            $table->boolean("is_primary")->default(0);
+        });
+    }
+
+    private function upEmailAddressTypes()
+    {
+        Schema::create('email_address_types', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string("type");
+        });
+    }
+
+    private function upPhoneNumbers()
+    {
+        Schema::create('phone_numbers', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string("phone_number");
+            $table->boolean("is_active")->default(1);
+            $table->boolean("is_primary")->default(0);
+        });
+    }
+
+
+    private function upPhoneNumberTypes()
+    {
+        Schema::create('phone_number_types', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string("type");
+            $table->text("description");
+        });
+    }
 
 
     /**
@@ -158,6 +201,10 @@ class CreateInitialDatabase extends Migration
         Schema::dropIfExists('customer_preferences');
         Schema::dropIfExists('inquiries');
         Schema::dropIfExists('customers');
+        Schema::dropIfExists('email_addresses');
+        Schema::dropIfExists('email_address_types');
+        Schema::dropIfExists('phone_numbers');
+        Schema::dropIfExists('phone_number_types');
     }
 }
 
