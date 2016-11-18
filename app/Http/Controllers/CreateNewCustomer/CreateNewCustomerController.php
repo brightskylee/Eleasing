@@ -15,6 +15,18 @@ class CreateNewCustomerController extends Controller
         return view('createNewCustomer.start');
     }
 
+    public function emailInquiry() {
+        return view('createNewCustomer.emailInquiry');
+    }
+
+    public function phoneInquiry() {
+        return view('createNewCustomer.phoneInquiry');
+    }
+
+    public function specialEventInquiry() {
+        return view('createNewCustomer.specialEventInquiry');
+    }
+
     /*
      * Function: Based on the selected contact type,
      * a specific form is presented to the user
@@ -76,18 +88,6 @@ class CreateNewCustomerController extends Controller
         }
     }
 
-    public function emailInquiry() {
-        return view('createNewCustomer.emailInquiry');
-    }
-
-    public function phoneInquiry() {
-        return view('createNewCustomer.phoneInquiry');
-    }
-
-    public function specialEventInquiry() {
-        return view('createNewCustomer.specialEventInquiry');
-    }
-
     /*
      * Function: Based on the provided contact form,
      * verify all required input is provided and redirect
@@ -99,7 +99,7 @@ class CreateNewCustomerController extends Controller
      * customer preferences form for the user. Previous form input
      * also included
      */
-    public function directContactFormWithData(Request $request) {
+    public function customerPreferences(Request $request) {
         //Determine contact form used to find required information
         $contactFormUsed = $request->input('contactFormUsed');
         switch($contactFormUsed) {
@@ -107,29 +107,25 @@ class CreateNewCustomerController extends Controller
                 //Verify that an email has been provided
                 if($request->input('email') != "") {
                     $requestInput = $this->cleanRequestInput($request->all());
-                    return redirect('/createNewCustomer/customerPreferences')->with($requestInput);
+                    return view('/createNewCustomer/customerPreferences', $requestInput);
                 }
                 break;
             case "phone":
                 //Verify that a phone number has been provided
                 if($request->input('phone') != "") {
                     $requestInput = $this->cleanRequestInput($request->all());
-                    return redirect('/createNewCustomer/customerPreferences')->with($requestInput);
+                    return view('/createNewCustomer/customerPreferences')->with($requestInput);
                 }
                 break;
             case "specialEvent":
                 //Verify that at least a first and last name has been provided
                 if($request->input('firstName') != "" && $request->input('lastName') != "") {
                     $requestInput = $this->cleanRequestInput($request->all());
-                    return redirect('/createNewCustomer/customerPreferences')->with($requestInput);
+                    return view('/createNewCustomer/customerPreferences')->with($requestInput);
                 }
                 break;
         }
         return back();
-    }
-
-    public function customerPreferences() {
-        return view('createNewCustomer.customerPreferences');
     }
 
     /*
@@ -143,7 +139,10 @@ class CreateNewCustomerController extends Controller
         $providedInput = array();
         foreach($requestData as $key => $value) {
             if($key != "_token") {
-                $providedInput[$key] = $value;
+                //Find all keys with value input
+                if($value != "") {
+                    $providedInput[$key] = $value;
+                }
             }
         }
         return $providedInput;

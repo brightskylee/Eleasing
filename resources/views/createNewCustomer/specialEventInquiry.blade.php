@@ -11,7 +11,7 @@
     <hr>
     <p class="italic form-note">Fields denoted with * are required</p>
     <div class="form-errors"></div>
-    <form method="POST" id="contactForm" action="/createNewCustomer/directContactForm">
+    <form method="POST" id="contactForm" action="/createNewCustomer/customerPreferences">
         {{ csrf_field() }}
         <input type="hidden" name="contactFormUsed" value="specialEvent" />
 
@@ -39,7 +39,7 @@
             <div class="address-container">
                 <label for="state">State</label>
                 <select id="state" name="state">
-                    <option value="0">Select State</option>
+                    <option value="">Select State</option>
                     @include('includes/states')
                 </select>
             </div>
@@ -55,7 +55,7 @@
         <div class="clear"></div>
         <hr>
         <div class="form-button-container">
-            <button type="button" id="contact-back-button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
+            <button type="button" class="back-button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
             <button type="submit" id="special-event-continue-submit">Continue <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
     </form>
