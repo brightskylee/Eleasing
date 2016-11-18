@@ -19,3 +19,5 @@ Route::post('/createNewCustomer/directForm', 'CreateNewCustomer\CreateNewCustome
 Route::get('/createNewCustomer/emailInquiry', 'CreateNewCustomer\CreateNewCustomerController@emailInquiry');
 Route::get('/createNewCustomer/phoneInquiry', 'CreateNewCustomer\CreateNewCustomerController@phoneInquiry');
 Route::get('/createNewCustomer/specialEventInquiry', 'CreateNewCustomer\CreateNewCustomerController@specialEventInquiry');
+
+Auth::Routes();
