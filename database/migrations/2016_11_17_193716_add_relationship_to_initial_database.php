@@ -174,7 +174,7 @@ class AddRelationshipToInitialDatabase extends Migration
     {
         Schema::table('email_addresses', function(Blueprint $table){
             $table->bigInteger('email_address_type_id', false, true);
-            $table->foreign('email_addresses_email_address_type_id')->references('id')->on('email_address_type');
+            $table->foreign('email_address_type_id')->references('id')->on('email_address_type');
         });
     }
     
@@ -194,7 +194,7 @@ class AddRelationshipToInitialDatabase extends Migration
     {
         Schema::table('phone_numbers', function(Blueprint $table){
             $table->bigInteger('phone_number_type_id', false, true);
-            $table->foreign('phone_numbers_phone_number_type_id')->references('id')->on('phone_number_type');
+            $table->foreign('phone_number_type_id')->references('id')->on('phone_number_type');
         });
     }
 
@@ -208,20 +208,20 @@ class AddRelationshipToInitialDatabase extends Migration
     public function down()
     {
         Schema::table('inquiry_events', function(Blueprint $table){
-            $table->dropForeign('inquiry_events_inquiry_id_foreign');
+            $table->dropForeign('inquiry_id');
             $table->dropColumn('inquiry_id');
         });
 
         Schema::table('inquiries', function(Blueprint $table){
-            $table->dropForeign('inquiries_inquiry_type_id_foreign');
+            $table->dropForeign('inquiry_type_id');
             $table->dropColumn('inquiry_type_id');
         });
 
         Schema::dropIfExists('_inquiry_inquiry_label');
         Schema::dropIfExists('_inquiry_inquiry_classifier');
-
+        
         Schema::table('inquiries', function(Blueprint $table){
-            $table->dropForeign('inquiries_customer_id_foreign');
+            $table->dropForeign('customer_id');
             $table->dropColumn('customer_id');
         });
 
@@ -231,17 +231,17 @@ class AddRelationshipToInitialDatabase extends Migration
         Schema::dropIfExists('_customer_marketing_outreach');
         Schema::dropIfExists('_customer_customer_preference');
         
-        Schema::dropIfExists('_customers_phone_numbers');
         Schema::table('phone_numbers', function(Blueprint $table){
-            $table->dropForeign('phone_numbers_phone_number_type_id_foreign');
+            $table->dropForeign('phone_number_type_id');
             $table->dropColumn('phone_number_type_id');
         });
+        Schema::dropIfExists('_customers_phone_numbers');
         
-        Schema::dropIfExists('_customers_email_addresses');
         Schema::table('email_addresses', function(Blueprint $table){
-            $table->dropForeign('email_addresses_email_address_type_id_foreign');
+            $table->dropForeign('email_address_type_id');
             $table->dropColumn('email_address_type_id');
         });
+        Schema::dropIfExists('_customers_email_addresses');
         
         
     }
