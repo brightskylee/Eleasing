@@ -8,7 +8,7 @@
 @section('content')
     <h1 class="form-header"><i class="fa fa-user-circle charcoal" aria-hidden="true"></i> Create New <span class="neutra-bold brookside-green">Customer</span></h1>
     <hr>
-    <form method="POST" id="start-form" action="/createNewCustomer/directStartForm/">
+    <form method="POST" id="start-form" action="/createNewCustomer/directStartForm">
         {{ csrf_field() }}
         <h2 class="form-sub-heading">How did this customer <span class="brookside-green">make contact</span>?</h2>
         <div id="contact-selection">

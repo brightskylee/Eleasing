@@ -19,6 +19,8 @@ Route::post('/createNewCustomer/directStartForm', 'CreateNewCustomer\CreateNewCu
 Route::get('/createNewCustomer/emailInquiry', 'CreateNewCustomer\CreateNewCustomerController@emailInquiry');
 Route::get('/createNewCustomer/phoneInquiry', 'CreateNewCustomer\CreateNewCustomerController@phoneInquiry');
 Route::get('/createNewCustomer/specialEventInquiry', 'CreateNewCustomer\CreateNewCustomerController@specialEventInquiry');
-Route::post('/createNewCustomer/directContactForm', 'CreateNewCustomer\CreateNewCustomerController@directContactForm');
+
+Route::post('/createNewCustomer/directContactForm', 'CreateNewCustomer\CreateNewCustomerController@directContactFormWithData');
+Route::get('/createNewCustomer/customerPreferences', 'CreateNewCustomer\CreateNewCustomerController@customerPreferences');
 
 Auth::Routes();
