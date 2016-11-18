@@ -75,8 +75,17 @@
   display: none;
 }
 
+#start-form .form-error {
+  text-align: center;
+}
+
 #start-submit {
   display: block;
   margin: 20px auto 0 auto !important;
   width: 200px;
+}
+
+.address-container {
+  float: left;
+  margin: 0 10px 20px 0;
 }

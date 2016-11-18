@@ -11,9 +11,8 @@ class CreateNewCustomerController extends Controller
         return view('createNewCustomer.start');
     }
 
-    public function directForm(Request $request) {
+    public function directStartForm(Request $request) {
         $customerContactType = $request->input('customerContact');
-
         switch($customerContactType) {
             //Inquiry Customers
             case "email":
@@ -74,5 +73,11 @@ class CreateNewCustomerController extends Controller
 
     public function specialEventInquiry() {
         return view('createNewCustomer.specialEventInquiry');
+    }
+
+    public function directContactForm(Request $request) {
+        //todo Determine contact form used to find required information
+        $contactFormUsed = $request->input('contactFormUsed');
+        echo $contactFormUsed;
     }
 }

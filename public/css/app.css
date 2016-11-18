@@ -34,6 +34,18 @@ body {
   font-family: "Raleway", sans-serif;
   background: whitesmoke; }
 
+select:focus, select:active {
+  outline: 0; }
+
+input[type="text"], input[type="email"] {
+  border: 1px solid #767E78;
+  -webkit-transition: .4s border;
+  transition: .4s border;
+  font-size: 15px; }
+
+input[type="text"]:hover, input[type="email"]:hover {
+  border: 1px solid #343834; }
+
 h1 {
   font-family: NeutraTextBook, serif;
   color: black;
@@ -79,6 +91,9 @@ button:hover {
 button:active, button:focus {
   outline: 0; }
 
+.center {
+  text-align: center; }
+
 .clear {
   clear: both; }
 
@@ -90,6 +105,9 @@ button:active, button:focus {
 
 .bold {
   font-weight: bold; }
+
+.italic {
+  font-style: italic; }
 
 .neutra-bold {
   font-family: "NeutraTextBold"; }
@@ -150,8 +168,27 @@ button:active, button:focus {
 
 .form-errors p {
   color: maroon;
-  font-size: 20px;
-  text-align: center;
+  font-size: 18px;
   font-weight: bold; }
+
+form label {
+  display: block;
+  margin: 10px 0 5px 0;
+  font-size: 16px;
+  font-weight: bold; }
+
+form input {
+  min-height: 20px;
+  min-width: 200px; }
+
+form select {
+  min-width: 200px; }
+
+.form-button-container {
+  width: 375px;
+  margin: 20px auto 0 auto; }
+
+.form-note {
+  margin-top: 5px; }
 
 /*# sourceMappingURL=app.css.map */

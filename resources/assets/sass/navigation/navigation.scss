@@ -8,19 +8,6 @@ nav {
   min-width: 810px;
 }
 
-select:focus, select:active {
-  outline: 0;
-}
-
-input[type="text"] {
-  border: 1px solid #767E78;
-  transition: .4s border;
-}
-
-input[type="text"]:hover {
-  border: 1px solid #343834;
-}
-
 .sidr ul li.active>a {
   background: $brookside-blue;
   box-shadow: none !important;

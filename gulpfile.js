@@ -40,4 +40,19 @@ elixir(function(mix) {
         'createNewCustomer/createNewCustomer.js'
     ],
     'public/js/createNewCustomer/createNewCustomer.js');
+
+    mix.scripts([
+        'createNewCustomer/emailInquiry.js'
+    ],
+    'public/js/createNewCustomer/emailInquiry.js');
+
+    mix.scripts([
+        'createNewCustomer/phoneInquiry.js'
+    ],
+    'public/js/createNewCustomer/phoneInquiry.js');
+
+    mix.scripts([
+            'createNewCustomer/specialEventInquiry.js'
+    ],
+    'public/js/createNewCustomer/specialEventInquiry.js');
 });

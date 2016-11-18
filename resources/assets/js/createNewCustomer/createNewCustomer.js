@@ -15,6 +15,11 @@ $(window).bind("pageshow", function() {
 });
 
 $(document).ready(function() {
+    setupInputMasks();
+    setupOnClickAndOnChangeEvents();
+});
+
+function setupOnClickAndOnChangeEvents() {
     $('input').on('change', function() {
         //Empty any form errors that have already been displayed
         clearFormErrors();
@@ -71,7 +76,11 @@ $(document).ready(function() {
                 break;
         }
     });
-});
+
+    $("#contact-back-button").click(function() {
+        window.location.replace('/createNewCustomer');
+    });
+}
 
 function determineContactSelectedInput(customerContactSelected) {
     //Based on the contact event selected, display the appropriate inputs
@@ -127,4 +136,8 @@ function displayFormError(text) {
 
 function clearFormErrors() {
     $(formErrorsDivSelector).empty();
+}
+
+function setupInputMasks() {
+    $("#phone-number").mask("(999) 999-9999");
 }

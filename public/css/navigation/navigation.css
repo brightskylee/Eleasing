@@ -5,17 +5,6 @@ nav {
   margin-bottom: 2%;
   min-width: 810px; }
 
-select:focus, select:active {
-  outline: 0; }
-
-input[type="text"] {
-  border: 1px solid #767E78;
-  -webkit-transition: .4s border;
-  transition: .4s border; }
-
-input[type="text"]:hover {
-  border: 1px solid #343834; }
-
 .sidr ul li.active > a {
   background: #3D6DB2;
   box-shadow: none !important; }

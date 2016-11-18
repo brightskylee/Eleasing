@@ -14,10 +14,11 @@
 //Create New Customer
 Route::get('/', 'CreateNewCustomer\CreateNewCustomerController@start');
 Route::get('/createNewCustomer', 'CreateNewCustomer\CreateNewCustomerController@start');
-Route::post('/createNewCustomer/directForm', 'CreateNewCustomer\CreateNewCustomerController@directForm');
+Route::post('/createNewCustomer/directStartForm', 'CreateNewCustomer\CreateNewCustomerController@directStartForm');
 
 Route::get('/createNewCustomer/emailInquiry', 'CreateNewCustomer\CreateNewCustomerController@emailInquiry');
 Route::get('/createNewCustomer/phoneInquiry', 'CreateNewCustomer\CreateNewCustomerController@phoneInquiry');
 Route::get('/createNewCustomer/specialEventInquiry', 'CreateNewCustomer\CreateNewCustomerController@specialEventInquiry');
+Route::post('/createNewCustomer/directContactForm', 'CreateNewCustomer\CreateNewCustomerController@directContactForm');
 
 Auth::Routes();
