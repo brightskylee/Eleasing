@@ -11,20 +11,10 @@
 |
 */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ];
-});
+use App\Models\Customers\Customer as Customer;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\Customers\Customer::class, function (Faker\Generator $faker) {
+$factory->define(Customer::class, function (Faker\Generator $faker) {
 
     return [
         'first_name' => $faker->firstName,

@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Models\Customers\Customer as Customer;
+
 class CustomersSeeder extends Seeder
 {
     /**
@@ -12,6 +14,6 @@ class CustomersSeeder extends Seeder
     public function run()
     {
         //Create Models
-        factory(App\Models\Customers\Customer::class, 50)->create();
+        factory(Customer::class, 50)->create();
     }
 }
