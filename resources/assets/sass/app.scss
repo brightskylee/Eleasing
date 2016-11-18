@@ -149,13 +149,14 @@ button:active, button:focus {
   background-color: $charcoal;
   height: 120px;
   width: $full;
-  position: absolute;
   bottom: 0;
+  position: relative;
 }
 
 #footer-logo-container {
   display: block;
-  margin: 15px auto 35px auto;
+  margin: 0 auto 35px auto;
+  padding-top: 15px;
   width: 495px;
 }
 

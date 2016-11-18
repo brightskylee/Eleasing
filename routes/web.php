@@ -21,5 +21,6 @@ Route::get('/createNewCustomer/phoneInquiry', 'CreateNewCustomer\CreateNewCustom
 Route::get('/createNewCustomer/specialEventInquiry', 'CreateNewCustomer\CreateNewCustomerController@specialEventInquiry');
 
 Route::post('/createNewCustomer/customerPreferences', 'CreateNewCustomer\CreateNewCustomerController@customerPreferences');
+Route::get('/createNewCustomer/unqualifiedInquiry', 'CreateNewCustomer\CreateNewCustomerController@unqualifiedInquiry');
 
 Auth::Routes();

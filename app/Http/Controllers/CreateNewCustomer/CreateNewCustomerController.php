@@ -27,6 +27,10 @@ class CreateNewCustomerController extends Controller
         return view('createNewCustomer.specialEventInquiry');
     }
 
+    public function unqualifiedInquiry() {
+        return view('createNewCustomer.unqualifiedInquiry');
+    }
+
     /*
      * Function: Based on the selected contact type,
      * a specific form is presented to the user
