@@ -77,8 +77,8 @@ function setupOnClickAndOnChangeEvents() {
         }
     });
 
-    $("#contact-back-button").click(function() {
-        window.location.replace('/createNewCustomer');
+    $(".back-button").click(function() {
+        parent.history.back();
     });
 }
 

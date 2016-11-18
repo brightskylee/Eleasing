@@ -88,6 +88,14 @@ button:active, button:focus {
   color: $brookside-green;
 }
 
+.brookside-blue {
+  color: $brookside-blue;
+}
+
+.brookside-dark-blue {
+  color: $brookside-dark-blue;
+}
+
 .charcoal {
   color: $charcoal;
 }
@@ -109,6 +117,12 @@ button:active, button:focus {
   min-height: $min-container-height;
   margin: 0 auto;
   position:relative;
+}
+
+.guide-box {
+  min-width: 350px;
+  min-height: 100px;
+  border: 1px dashed black;
 }
 
 //Header =====================

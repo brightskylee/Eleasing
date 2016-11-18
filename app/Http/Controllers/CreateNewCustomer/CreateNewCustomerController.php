@@ -7,10 +7,35 @@ use Illuminate\Http\Request;
 
 class CreateNewCustomerController extends Controller
 {
+    /*
+     * Function: Loads the form to display
+     * available options for contact types
+     */
     public function start() {
         return view('createNewCustomer.start');
     }
 
+    public function emailInquiry() {
+        return view('createNewCustomer.emailInquiry');
+    }
+
+    public function phoneInquiry() {
+        return view('createNewCustomer.phoneInquiry');
+    }
+
+    public function specialEventInquiry() {
+        return view('createNewCustomer.specialEventInquiry');
+    }
+
+    /*
+     * Function: Based on the selected contact type,
+     * a specific form is presented to the user
+     *
+     * @param Request $request | inputs to determine
+     * the appropriate form
+     * @return redirect $redirectionURL | the url that is
+     * redirected to based on input
+     */
     public function directStartForm(Request $request) {
         $customerContactType = $request->input('customerContact');
         switch($customerContactType) {
@@ -29,7 +54,7 @@ class CreateNewCustomerController extends Controller
             //Leasing Customers
             case "walkIn":
                 $leasingCustomerAppointment = $request->input('leasingCustomerAppointment');
-                //Determine if the customer has an appointment
+                //todo Determine if the customer has an appointment
                 echo $leasingCustomerAppointment;
                 break;
             default:
@@ -63,21 +88,63 @@ class CreateNewCustomerController extends Controller
         }
     }
 
-    public function emailInquiry() {
-        return view('createNewCustomer.emailInquiry');
-    }
-
-    public function phoneInquiry() {
-        return view('createNewCustomer.phoneInquiry');
-    }
-
-    public function specialEventInquiry() {
-        return view('createNewCustomer.specialEventInquiry');
-    }
-
-    public function directContactForm(Request $request) {
-        //todo Determine contact form used to find required information
+    /*
+     * Function: Based on the provided contact form,
+     * verify all required input is provided and redirect
+     * to customer preferences with data
+     *
+     * @param Request $request | form input provided from
+     * contact form
+     * @return redirect $redirectionURL | the url containing the
+     * customer preferences form for the user. Previous form input
+     * also included
+     */
+    public function customerPreferences(Request $request) {
+        //Determine contact form used to find required information
         $contactFormUsed = $request->input('contactFormUsed');
-        echo $contactFormUsed;
+        switch($contactFormUsed) {
+            case "email":
+                //Verify that an email has been provided
+                if($request->input('email') != "") {
+                    $requestInput = $this->cleanRequestInput($request->all());
+                    return view('/createNewCustomer/customerPreferences', $requestInput);
+                }
+                break;
+            case "phone":
+                //Verify that a phone number has been provided
+                if($request->input('phone') != "") {
+                    $requestInput = $this->cleanRequestInput($request->all());
+                    return view('/createNewCustomer/customerPreferences')->with($requestInput);
+                }
+                break;
+            case "specialEvent":
+                //Verify that at least a first and last name has been provided
+                if($request->input('firstName') != "" && $request->input('lastName') != "") {
+                    $requestInput = $this->cleanRequestInput($request->all());
+                    return view('/createNewCustomer/customerPreferences')->with($requestInput);
+                }
+                break;
+        }
+        return back();
+    }
+
+    /*
+     * Function: Build an array with all request input
+     * @param $requestData array | all form data provided
+     *
+     * @return $providedInput array | parsed data that is
+     * ready to be sent
+     */
+    private function cleanRequestInput($requestData) {
+        $providedInput = array();
+        foreach($requestData as $key => $value) {
+            if($key != "_token") {
+                //Find all keys with value input
+                if($value != "") {
+                    $providedInput[$key] = $value;
+                }
+            }
+        }
+        return $providedInput;
     }
 }
