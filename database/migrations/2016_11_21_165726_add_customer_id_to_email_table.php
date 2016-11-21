@@ -17,7 +17,7 @@ class AddCustomerIdToEmailTable extends Migration
         Schema::dropIfExists('_customers_email_addresses');
         //Add the in table foreign key to the email address table
         Schema::table('email_addresses', function(Blueprint $table){
-            $table->bigInteger('customer_id', false, true);
+            $table->bigInteger('customer_id', false, true)->nullable();
             $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
