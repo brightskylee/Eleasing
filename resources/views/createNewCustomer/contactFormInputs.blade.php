@@ -1,7 +1,12 @@
-<label for="first-name">First Name</label>
-<input type="text" id="first-name" name="firstName"/>
-<label for="last-name">Last Name</label>
-<input type="text" id="last-name" name="lastName"/>
+<div class="name-container">
+    <label for="first-name">First Name @if(!empty($nameRequired))*@endif</label>
+    <input type="text" id="first-name" name="firstName"/>
+</div>
+<div class="name-container">
+    <label for="last-name">Last Name @if(!empty($nameRequired))*@endif</label>
+    <input type="text" id="last-name" name="lastName"/>
+</div>
+<div class="clear"></div>
 <div id="address-input">
     <div class="address-container">
         <label for="street-address">Street Address</label>

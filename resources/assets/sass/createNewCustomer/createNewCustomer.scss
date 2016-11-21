@@ -111,6 +111,15 @@
   width: 200px;
 }
 
+#email-address, #phone-number {
+  display: block;
+}
+
+.name-container {
+  float: left;
+  margin-right: 10px;
+}
+
 .address-container {
   float: left;
   margin: 0 10px 20px 0;
@@ -144,6 +153,10 @@
 
 .brand-exposure-input {
   margin-bottom: 10px;
+}
+
+.brand-exposure-input:hover {
+  cursor: pointer;
 }
 
 .progressbar {
@@ -192,10 +205,10 @@
   content: none;
 }
 .progressbar li.active {
-  color: $brookside-dark-green;
+  color: $brookside-dark-blue;
 }
 .progressbar li.active:before {
-  border-color: $brookside-dark-green;
+  border-color: $brookside-dark-blue;
 }
 .progressbar li.active + li:after {
   background-color: $brookside-dark-green;

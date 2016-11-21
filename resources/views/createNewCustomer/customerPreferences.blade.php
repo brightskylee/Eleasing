@@ -84,6 +84,12 @@
             </div>
         </div>
         <div class="clear"></div>
+        <div class="preference-container">
+            <h2 class="preference-header">Does this customer have an appointment?</h2>
+            <hr>
+            <input type="radio" name="customerAppointment" value="yes"/> Yes<br>
+            <input type="radio" name="customerAppointment" value="no"/> No<br>
+        </div>
         <div class="form-button-container">
             <button type="button" class="back-button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
             <button type="submit" id="preference-continue-submit">Finished <i class="fa fa-check" aria-hidden="true"></i></button>

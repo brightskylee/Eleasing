@@ -44,13 +44,17 @@ select:focus, select:active {
 }
 
 input[type="text"], input[type="email"] {
-  border: 1px solid #767E78;
+  border: 1px solid darkgray;
+  border-radius: 4px;
   transition: .4s border;
   font-size: 15px;
+  -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
 }
 
 input[type="text"]:hover, input[type="email"]:hover {
-  border: 1px solid #343834;
+  border: 1px solid $charcoal;
 }
 
 h1 {
@@ -128,6 +132,10 @@ button:active, button:focus {
   color: $charcoal;
 }
 
+.dark-gray {
+  color: $dark-gray;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -143,7 +151,6 @@ button:active, button:focus {
 .guide-box {
   min-width: 350px;
   min-height: 100px;
-  border: 1px dashed black;
 }
 
 //Header =====================
@@ -209,6 +216,7 @@ button:active, button:focus {
 .form-note {
   margin-top: 5px;
   font-size: 15px;
+  color: $dark-gray;
 }
 
 .form-errors p {
@@ -230,7 +238,14 @@ form input {
 }
 
 form select {
+  font-size: 15px;
   min-width: 200px;
+  height: 25px;
+  border-color: #767E78 !important;
+  background: white;
+  -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
 }
 
 .form-button-container {
