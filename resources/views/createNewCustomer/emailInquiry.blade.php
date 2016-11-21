@@ -9,7 +9,8 @@
 @stop
 
 @section('content')
-    <h1 class="form-header"><i class="fa fa-envelope charcoal" aria-hidden="true"></i> Email <span class="brookside-green">Inquiry</span></h1>
+    @include('createNewCustomer/progressBar', ['step1' => 'finished'])
+    <h1 class="form-header"><i class="fa fa-envelope-o charcoal" aria-hidden="true"></i> Email <span class="brookside-green">Inquiry</span></h1>
     <hr>
     <p class="italic form-note">Fields denoted with * are required</p>
     <div class="form-errors"></div>
@@ -23,7 +24,6 @@
         <input type="text" id="phone-number" name="phone"/>
         @include('createNewCustomer/contactFormInputs')
         <div class="clear"></div>
-        <hr>
         <div class="form-button-container">
             <button type="button" class="back-button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
             <button type="submit" id="email-continue-submit">Continue <i class="fa fa-arrow-right" aria-hidden="true"></i></button>

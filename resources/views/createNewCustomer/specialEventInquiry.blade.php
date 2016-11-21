@@ -9,6 +9,7 @@
 @stop
 
 @section('content')
+    @include('createNewCustomer/progressBar', ['step1' => 'finished'])
     <h1 class="form-header"><i class="fa fa-calendar-o charcoal" aria-hidden="true"></i> Special Event <span class="brookside-green">Inquiry</span></h1>
     <hr>
     <p class="italic form-note">Fields denoted with * are required</p>
