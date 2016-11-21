@@ -12,6 +12,10 @@
 */
 
 use App\Models\Customers\Customer as Customer;
+use App\Models\Customers\EmailAddress as EmailAddress;
+use App\Models\Customers\EmailAddressType as EmailAddressType;
+use App\Models\Customers\PhoneNumber as PhoneNumber;
+use App\Models\Customers\PhoneNumberType as PhoneNumberType;
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Customer::class, function (Faker\Generator $faker) {
@@ -22,5 +26,23 @@ $factory->define(Customer::class, function (Faker\Generator $faker) {
         'last_name' => $faker->lastName,
         'birthday' => $faker->date('Y-m-d'),
         'gender' => rand(0,1)?('M'):('F')
+    ];
+});
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(EmailAddress::class, function (Faker\Generator $faker) {
+    return [
+        'email_address' => $faker->email,
+        'is_active' => '1',
+        'is_primary' => '1',
+    ];
+});
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(PhoneNumber::class, function (Faker\Generator $faker) {
+    return [
+        'phone_number' => $faker->phoneNumber,
+        'is_active' => '1',
+        'is_primary' => '1',
     ];
 });
