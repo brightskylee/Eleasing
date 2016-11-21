@@ -39,10 +39,24 @@ $factory->define(EmailAddress::class, function (Faker\Generator $faker) {
 });
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(EmailAddressType::class, function (Faker\Generator $faker) {
+    return [
+        'type' => 'default',
+    ];
+});
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(PhoneNumber::class, function (Faker\Generator $faker) {
     return [
         'phone_number' => $faker->phoneNumber,
         'is_active' => '1',
         'is_primary' => '1',
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(PhoneNumberType::class, function (Faker\Generator $faker) {
+    return [
+        'type' => 'default',
+        'description'=>$faker->sentence
     ];
 });
