@@ -4,11 +4,30 @@
 @import "fonts";
 
 // General =====================
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   width: $full;
   font-family: $font-family-sans-serif;
   background: whitesmoke;
+}
+
+.container {
+  position:relative;
+  min-height: 100%;
+  width: $container-width;
+  /* equal to footer height */
+  margin: 0 auto -140px auto;
+}
+.container:after {
+  content: "";
+  display: block;
+}
+#footer, .container:after {
+  height: 140px;
 }
 
 .one-third {
@@ -121,13 +140,6 @@ button:active, button:focus {
   font-family: $neutra-text-bold-sans-serif;
 }
 
-.container {
-  width: $container-width;
-  min-height: $min-container-height;
-  margin: 0 auto;
-  position:relative;
-}
-
 .guide-box {
   min-width: 350px;
   min-height: 100px;
@@ -156,7 +168,7 @@ button:active, button:focus {
 //Footer =====================
 #footer {
   background-color: $charcoal;
-  height: 120px;
+  height: 142px;
   width: $full;
   bottom: 0;
   position: relative;
@@ -171,8 +183,8 @@ button:active, button:focus {
 
 #footer-copyright {
   text-align: center;
-  //color: rgb(115, 115, 115);
   color: $brookside-green;
+  margin-top: 55px;
 }
 
 .footer-logo {
@@ -223,5 +235,5 @@ form select {
 
 .form-button-container {
   width: 375px;
-  margin: 20px auto 0 auto;
+  margin: 50px auto 0 auto;
 }

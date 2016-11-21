@@ -28,11 +28,28 @@
 .chalet-london-eighty {
   font-family: "ChaletLondonEighty"; }
 
+html, body {
+  height: 100%; }
+
 body {
   margin: 0;
   width: 100%;
   font-family: "Raleway", sans-serif;
   background: whitesmoke; }
+
+.container {
+  position: relative;
+  min-height: 100%;
+  width: 90%;
+  /* equal to footer height */
+  margin: 0 auto -140px auto; }
+
+.container:after {
+  content: "";
+  display: block; }
+
+#footer, .container:after {
+  height: 140px; }
 
 .one-third {
   width: 32%;
@@ -125,12 +142,6 @@ button:active, button:focus {
 .neutra-bold {
   font-family: "NeutraTextBold"; }
 
-.container {
-  width: 90%;
-  min-height: 700px;
-  margin: 0 auto;
-  position: relative; }
-
 .guide-box {
   min-width: 350px;
   min-height: 100px;
@@ -157,7 +168,7 @@ button:active, button:focus {
 
 #footer {
   background-color: #34282C;
-  height: 120px;
+  height: 142px;
   width: 100%;
   bottom: 0;
   position: relative; }
@@ -170,7 +181,8 @@ button:active, button:focus {
 
 #footer-copyright {
   text-align: center;
-  color: #B1CC25; }
+  color: #B1CC25;
+  margin-top: 55px; }
 
 .footer-logo {
   -webkit-filter: brightness(45%);
@@ -211,6 +223,6 @@ form select {
 
 .form-button-container {
   width: 375px;
-  margin: 20px auto 0 auto; }
+  margin: 50px auto 0 auto; }
 
 /*# sourceMappingURL=app.css.map */

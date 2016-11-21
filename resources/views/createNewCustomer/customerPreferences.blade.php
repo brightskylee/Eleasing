@@ -13,8 +13,9 @@
     <h1 class="form-header"><i class="fa fa-address-book-o" aria-hidden="true"></i> Customer <span class="brookside-green">Preferences</span></h1>
     <hr>
     @include('createNewCustomer/contactFormDetails')
-    <form action="" method="POST">
+    <form action="/createNewCustomer/submitCustomerInformation" method="POST">
         {{ csrf_field() }}
+        @include('createNewCustomer/providedCustomerContactInformation')
         <div id="location-preference" class="preference-container">
             <h2 class="preference-header">Locations</h2>
             <hr>
@@ -22,35 +23,35 @@
                 <label>
                     <img class="selectable-logo" src="{{asset('assets/img/logos/dark/downtown-logo.png')}}">
                     <h3 class="location-name">Brookside Downtown</h3>
-                    <input type="checkbox" name="customerContact" value="" />
+                    <input class="checkbox" type="checkbox" name="customerContact[]" value="brooksideDowntown" />
                 </label>
             </div>
             <div class="selectable-input-image">
                 <label>
                     <img class="selectable-logo" src="{{asset('assets/img/logos/dark/midtown-logo.png')}}">
                     <h3 class="location-name">Brookside Midtown</h3>
-                    <input type="checkbox" name="customerContact" value="" />
+                    <input type="checkbox" name="customerContact[]" value="brooksideMidtown" />
                 </label>
             </div>
             <div class="selectable-input-image">
                 <label>
                     <img class="selectable-logo" style="width: 80px !important;" src="{{asset('assets/img/logos/dark/townhomes-logo.png')}}">
                     <h3 class="location-name">Brookside Townhomes</h3>
-                    <input type="checkbox" name="customerContact" value="" />
+                    <input type="checkbox" name="customerContact[]" value="brooksideTownhomes" />
                 </label>
             </div>
             <div class="selectable-input-image">
                 <label>
                     <img class="selectable-logo" style="width: 80px !important;" src="{{asset('assets/img/logos/dark/townhomes-logo.png')}}">
                     <h3 class="location-name">Bengal Ridge</h3>
-                    <input type="checkbox" name="customerContact" value="" />
+                    <input type="checkbox" name="customerContact[]" value="bengalRidge" />
                 </label>
             </div>
             <div class="selectable-input-image">
                 <label>
                     <img class="selectable-logo" src="{{asset('assets/img/logos/dark/midtown-logo.png')}}">
                     <h3 class="location-name">Midtown WKU</h3>
-                    <input type="checkbox" name="customerContact" value="" />
+                    <input type="checkbox" name="customerContact[]" value="midtownWKU" />
                 </label>
             </div>
         </div>
@@ -64,22 +65,22 @@
             <h2 class="preference-header">Brand Exposure</h2>
             <hr>
             <div class="floated-container" style="width: 200px;">
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Facebook<br>
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Google<br>
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Twitter<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="facebook"> Facebook<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="google"> Google<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="twitter"> Twitter<br>
             </div>
             <div class="floated-container" style="width: 200px;">
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> The Brookside Bus<br>
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Apartment Finder<br>
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> MU Greek Week<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="brooksideBus"> The Brookside Bus<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="apartmentFinder"> Apartment Finder<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="greekWeek"> Greek Week<br>
             </div>
             <div class="floated-container" style="width: 200px;">
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Friends<br>
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Fliers<br>
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Craigslist<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="friends"> Friends<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="fliers"> Fliers<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="craigslist"> Craigslist<br>
             </div>
             <div class="floated-container" style="width: 200px;">
-                <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Other<br>
+                <input class="brand-exposure-input" type="checkbox" name="brandExposure[]" value="other"> Other<br>
             </div>
         </div>
         <div class="clear"></div>

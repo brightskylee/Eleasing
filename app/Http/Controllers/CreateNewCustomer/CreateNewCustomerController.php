@@ -133,6 +133,20 @@ class CreateNewCustomerController extends Controller
     }
 
     /*
+     * Function: After all input for a customer has been provided,
+     * submit information for save
+     *
+     * @param Request $request | form input from contact info and
+     * customer preferences
+     * @return $success array | success of customer save attempt
+     * and any errors that may be returned
+     */
+    public function submitCustomerInformation(Request $request) {
+        //todo Submit data to be saved
+        return $request->all();
+    }
+
+    /*
      * Function: Build an array with all request input
      * @param $requestData array | all form data provided
      *

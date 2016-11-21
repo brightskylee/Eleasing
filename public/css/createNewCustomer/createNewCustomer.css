@@ -38,7 +38,7 @@
 
 #location-preference .selectable-input-image {
   width: 175px;
-  min-height: 85px !important; }
+  min-height: 90px !important; }
 
 #location-preference h3 {
   font-size: 16px; }
@@ -148,7 +148,7 @@
   counter-reset: step;
   height: 60px;
   width: 75%;
-  margin: 20px auto 30px auto; }
+  margin: 15px auto 30px auto; }
 
 .progressbar li {
   font-family: "Raleway",serif;
