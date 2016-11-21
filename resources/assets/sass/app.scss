@@ -11,6 +11,15 @@ body {
   background: whitesmoke;
 }
 
+.one-third {
+  width: 32%;
+  margin-right: 1%;
+}
+
+.floated-container {
+  float: left;
+}
+
 select:focus, select:active {
   outline: 0;
 }
@@ -174,13 +183,20 @@ button:active, button:focus {
 
 //Forms =====================
 .form-header {
-  color: $brookside-blue;
+  font-family: $font-family-sans-serif;
+  color: $brookside-dark-blue;
+  font-size: 24px;
 }
 
 .form-sub-heading {
   font-size: 22px;
   text-align: center;
   color: $brookside-dark-blue;
+}
+
+.form-note {
+  margin-top: 5px;
+  font-size: 15px;
 }
 
 .form-errors p {
@@ -192,7 +208,7 @@ button:active, button:focus {
 form label {
   display :block;
   margin: 10px 0 5px 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -208,8 +224,4 @@ form select {
 .form-button-container {
   width: 375px;
   margin: 20px auto 0 auto;
-}
-
-.form-note {
-  margin-top: 5px;
 }

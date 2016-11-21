@@ -34,6 +34,13 @@ body {
   font-family: "Raleway", sans-serif;
   background: whitesmoke; }
 
+.one-third {
+  width: 32%;
+  margin-right: 1%; }
+
+.floated-container {
+  float: left; }
+
 select:focus, select:active {
   outline: 0; }
 
@@ -171,12 +178,18 @@ button:active, button:focus {
   margin: 0 10px 0 10px; }
 
 .form-header {
-  color: #3D6DB2; }
+  font-family: "Raleway", sans-serif;
+  color: #2C4F81;
+  font-size: 24px; }
 
 .form-sub-heading {
   font-size: 22px;
   text-align: center;
   color: #2C4F81; }
+
+.form-note {
+  margin-top: 5px;
+  font-size: 15px; }
 
 .form-errors p {
   color: maroon;
@@ -186,7 +199,7 @@ button:active, button:focus {
 form label {
   display: block;
   margin: 10px 0 5px 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold; }
 
 form input {
@@ -199,8 +212,5 @@ form select {
 .form-button-container {
   width: 375px;
   margin: 20px auto 0 auto; }
-
-.form-note {
-  margin-top: 5px; }
 
 /*# sourceMappingURL=app.css.map */

@@ -25,6 +25,10 @@ function setupOnClickAndOnChangeEvents() {
         clearFormErrors();
     });
 
+    $('.back-button').click(function() {
+        parent.history.back();
+    });
+
     //On change handler for a contact type selection
     $('#contact-selection input').on('change', function() {
         //Determines type of customer contact selected
@@ -75,10 +79,6 @@ function setupOnClickAndOnChangeEvents() {
                 return false;
                 break;
         }
-    });
-
-    $(".back-button").click(function() {
-        parent.history.back();
     });
 }
 
