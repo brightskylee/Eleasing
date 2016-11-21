@@ -10,7 +10,7 @@
 
 @section('content')
     @include('createNewCustomer/progressBar', ['step1' => 'finished'])
-    <h1 class="form-header"><i class="fa fa-envelope-o charcoal" aria-hidden="true"></i> Email <span class="brookside-green">Inquiry</span></h1>
+    <h1 class="form-header"><i class="fa fa-envelope-o dark-gray" aria-hidden="true"></i> Email <span class="brookside-green">Inquiry</span></h1>
     <hr>
     <p class="italic form-note">Fields denoted with * are required</p>
     <div class="form-errors"></div>

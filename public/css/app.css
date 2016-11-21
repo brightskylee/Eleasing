@@ -28,11 +28,28 @@
 .chalet-london-eighty {
   font-family: "ChaletLondonEighty"; }
 
+html, body {
+  height: 100%; }
+
 body {
   margin: 0;
   width: 100%;
   font-family: "Raleway", sans-serif;
   background: whitesmoke; }
+
+.container {
+  position: relative;
+  min-height: 100%;
+  width: 90%;
+  /* equal to footer height */
+  margin: 0 auto -140px auto; }
+
+.container:after {
+  content: "";
+  display: block; }
+
+#footer, .container:after {
+  height: 140px; }
 
 .one-third {
   width: 32%;
@@ -45,13 +62,15 @@ select:focus, select:active {
   outline: 0; }
 
 input[type="text"], input[type="email"] {
-  border: 1px solid #767E78;
+  border: 1px solid darkgray;
+  border-radius: 4px;
   -webkit-transition: .4s border;
   transition: .4s border;
-  font-size: 15px; }
+  font-size: 15px;
+  box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5); }
 
 input[type="text"]:hover, input[type="email"]:hover {
-  border: 1px solid #343834; }
+  border: 1px solid #34282C; }
 
 h1 {
   font-family: NeutraTextBook, serif;
@@ -116,6 +135,9 @@ button:active, button:focus {
 .charcoal {
   color: #34282C; }
 
+.dark-gray {
+  color: #6E6E6E; }
+
 .bold {
   font-weight: bold; }
 
@@ -125,16 +147,9 @@ button:active, button:focus {
 .neutra-bold {
   font-family: "NeutraTextBold"; }
 
-.container {
-  width: 90%;
-  min-height: 700px;
-  margin: 0 auto;
-  position: relative; }
-
 .guide-box {
   min-width: 350px;
-  min-height: 100px;
-  border: 1px dashed black; }
+  min-height: 100px; }
 
 #header {
   text-align: center;
@@ -157,7 +172,7 @@ button:active, button:focus {
 
 #footer {
   background-color: #34282C;
-  height: 120px;
+  height: 142px;
   width: 100%;
   bottom: 0;
   position: relative; }
@@ -170,7 +185,8 @@ button:active, button:focus {
 
 #footer-copyright {
   text-align: center;
-  color: #B1CC25; }
+  color: #B1CC25;
+  margin-top: 55px; }
 
 .footer-logo {
   -webkit-filter: brightness(45%);
@@ -189,7 +205,8 @@ button:active, button:focus {
 
 .form-note {
   margin-top: 5px;
-  font-size: 15px; }
+  font-size: 15px;
+  color: #6E6E6E; }
 
 .form-errors p {
   color: maroon;
@@ -207,10 +224,15 @@ form input {
   min-width: 200px; }
 
 form select {
-  min-width: 200px; }
+  font-size: 15px;
+  min-width: 200px;
+  height: 25px;
+  border-color: #767E78 !important;
+  background: white;
+  box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5); }
 
 .form-button-container {
   width: 375px;
-  margin: 20px auto 0 auto; }
+  margin: 50px auto 0 auto; }
 
 /*# sourceMappingURL=app.css.map */

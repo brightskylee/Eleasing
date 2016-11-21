@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-    <h1 class="form-header"><i class="fa fa-times-circle charcoal" aria-hidden="true"></i> Unqualified <span class="brookside-green">Inquiry</span></h1>
+    <h1 class="form-header"><i class="fa fa-times-circle dark-gray" aria-hidden="true"></i> Unqualified <span class="brookside-green">Inquiry</span></h1>
     <hr>
     <form method="POST" id="contactForm" action="/createNewCustomer/customerPreferences">
         {{ csrf_field() }}

@@ -4,11 +4,30 @@
 @import "fonts";
 
 // General =====================
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   width: $full;
   font-family: $font-family-sans-serif;
   background: whitesmoke;
+}
+
+.container {
+  position:relative;
+  min-height: 100%;
+  width: $container-width;
+  /* equal to footer height */
+  margin: 0 auto -140px auto;
+}
+.container:after {
+  content: "";
+  display: block;
+}
+#footer, .container:after {
+  height: 140px;
 }
 
 .one-third {
@@ -25,13 +44,17 @@ select:focus, select:active {
 }
 
 input[type="text"], input[type="email"] {
-  border: 1px solid #767E78;
+  border: 1px solid darkgray;
+  border-radius: 4px;
   transition: .4s border;
   font-size: 15px;
+  -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
 }
 
 input[type="text"]:hover, input[type="email"]:hover {
-  border: 1px solid #343834;
+  border: 1px solid $charcoal;
 }
 
 h1 {
@@ -109,6 +132,10 @@ button:active, button:focus {
   color: $charcoal;
 }
 
+.dark-gray {
+  color: $dark-gray;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -121,17 +148,9 @@ button:active, button:focus {
   font-family: $neutra-text-bold-sans-serif;
 }
 
-.container {
-  width: $container-width;
-  min-height: $min-container-height;
-  margin: 0 auto;
-  position:relative;
-}
-
 .guide-box {
   min-width: 350px;
   min-height: 100px;
-  border: 1px dashed black;
 }
 
 //Header =====================
@@ -156,7 +175,7 @@ button:active, button:focus {
 //Footer =====================
 #footer {
   background-color: $charcoal;
-  height: 120px;
+  height: 142px;
   width: $full;
   bottom: 0;
   position: relative;
@@ -171,8 +190,8 @@ button:active, button:focus {
 
 #footer-copyright {
   text-align: center;
-  //color: rgb(115, 115, 115);
   color: $brookside-green;
+  margin-top: 55px;
 }
 
 .footer-logo {
@@ -197,6 +216,7 @@ button:active, button:focus {
 .form-note {
   margin-top: 5px;
   font-size: 15px;
+  color: $dark-gray;
 }
 
 .form-errors p {
@@ -218,10 +238,17 @@ form input {
 }
 
 form select {
+  font-size: 15px;
   min-width: 200px;
+  height: 25px;
+  border-color: #767E78 !important;
+  background: white;
+  -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
 }
 
 .form-button-container {
   width: 375px;
-  margin: 20px auto 0 auto;
+  margin: 50px auto 0 auto;
 }

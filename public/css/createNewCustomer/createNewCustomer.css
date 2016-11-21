@@ -38,7 +38,7 @@
 
 #location-preference .selectable-input-image {
   width: 175px;
-  min-height: 85px !important; }
+  min-height: 90px !important; }
 
 #location-preference h3 {
   font-size: 16px; }
@@ -116,6 +116,13 @@
   margin: 20px auto 0 auto !important;
   width: 200px; }
 
+#email-address, #phone-number {
+  display: block; }
+
+.name-container {
+  float: left;
+  margin-right: 10px; }
+
 .address-container {
   float: left;
   margin: 0 10px 20px 0; }
@@ -144,11 +151,14 @@
 .brand-exposure-input {
   margin-bottom: 10px; }
 
+.brand-exposure-input:hover {
+  cursor: pointer; }
+
 .progressbar {
   counter-reset: step;
   height: 60px;
   width: 75%;
-  margin: 20px auto 30px auto; }
+  margin: 15px auto 30px auto; }
 
 .progressbar li {
   font-family: "Raleway",serif;
@@ -190,10 +200,10 @@
   content: none; }
 
 .progressbar li.active {
-  color: #8DCB00; }
+  color: #2C4F81; }
 
 .progressbar li.active:before {
-  border-color: #8DCB00; }
+  border-color: #2C4F81; }
 
 .progressbar li.active + li:after {
   background-color: #8DCB00; }

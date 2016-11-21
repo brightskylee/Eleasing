@@ -25,6 +25,7 @@ function setupOnClickAndOnChangeEvents() {
         clearFormErrors();
     });
 
+    //Redirect user to previous page if back button is clicked
     $('.back-button').click(function() {
         parent.history.back();
     });
