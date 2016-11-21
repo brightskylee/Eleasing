@@ -1,5 +1,7 @@
 @extends('layout')
-
+@section('title')
+    <title>Customer Preferences</title>
+@stop
 @section('pageLinks')
     <link rel="stylesheet" href="{{ elixir('css/createNewCustomer/createNewCustomer.css') }}">
     <script src="{{ elixir("js/createNewCustomer/createNewCustomer.js") }}"></script>
@@ -54,11 +56,17 @@
         <h2 class="preference-header">Additional Preferences</h2>
         <div class="guide-box"></div>
         <h2 class="preference-header">Brand Exposure</h2>
-        <div class="guide-box"></div>
+        <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Facebook<br>
+        <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Google<br>
+        <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Twitter<br>
+        <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> The Brookside Bus<br>
+        <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> Apartment Finder<br>
+        <input class="brand-exposure-input" type="checkbox" name="brandExposure" value=""> MU Greek Week<br>
         <hr>
         <div class="form-button-container">
             <button type="button" class="back-button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
-            <button type="submit" id="preference-continue-submit">Continue <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            <button type="submit" id="preference-continue-submit">Finished <i class="fa fa-check" aria-hidden="true"></i></button>
         </div>
+        <p id="unqualified-link"><a href="/createNewCustomer/unqualifiedInquiry"><i class="fa fa-times-circle" aria-hidden="true"></i> Unqualified Inquiry?</a></p>
     </form>
 @stop

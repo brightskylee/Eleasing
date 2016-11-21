@@ -120,7 +120,7 @@ button:active, button:focus {
 
 .container {
   width: 90%;
-  min-height: 600px;
+  min-height: 700px;
   margin: 0 auto;
   position: relative; }
 
@@ -152,12 +152,13 @@ button:active, button:focus {
   background-color: #34282C;
   height: 120px;
   width: 100%;
-  position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  position: relative; }
 
 #footer-logo-container {
   display: block;
-  margin: 15px auto 35px auto;
+  margin: 0 auto 35px auto;
+  padding-top: 15px;
   width: 495px; }
 
 #footer-copyright {

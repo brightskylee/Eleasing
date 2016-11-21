@@ -1,5 +1,7 @@
 @extends('layout')
-
+@section('title')
+    <title>Phone Inquiry</title>
+@stop
 @section('pageLinks')
     <link rel="stylesheet" href="{{ elixir('css/createNewCustomer/createNewCustomer.css') }}">
     <script src="{{ elixir("js/createNewCustomer/createNewCustomer.js") }}"></script>
@@ -17,46 +19,15 @@
 
         <label for="phone-number">Phone Number *</label>
         <input type="text" id="phone-number" name="phone" />
-        <label for="first-name">First Name</label>
-        <input type="text" id="first-name" name="firstName"/>
-        <label for="last-name">Last Name</label>
-        <input type="text" id="last-name" name="lastName"/>
         <label for="email-address">Email Address</label>
         <input type="email" id="email-address" name="email"/>
-        <div id="address-input">
-            <div class="address-container">
-                <label for="street-address">Street Address</label>
-                <input type="text" id="street-address" name="streetAddress"/>
-            </div>
-            <div class="address-container">
-                <label for="street-address-2">Street Address 2</label>
-                <input type="text" id="street-address-2" name="streetAddress2"/>
-            </div>
-            <div class="address-container">
-                <label for="city">City</label>
-                <input type="text" id="city" name="city"/>
-            </div>
-            <div class="address-container">
-                <label for="state">State</label>
-                <select id="state" name="state">
-                    <option value="" >Select State</option>
-                    @include('includes/states')
-                </select>
-            </div>
-            <div class="address-container">
-                <label for="country">Country</label>
-                <input type="text" id="country" placeholder="United States" name="country"/>
-            </div>
-            <div class="address-container">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip"/>
-            </div>
-        </div>
+        @include('createNewCustomer/contactFormInputs')
         <div class="clear"></div>
         <hr>
         <div class="form-button-container">
             <button type="button" class="back-button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button>
             <button type="submit" id="phone-continue-submit">Continue <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
+        <p id="unqualified-link"><a href="/createNewCustomer/unqualifiedInquiry"><i class="fa fa-times-circle" aria-hidden="true"></i> Unqualified Inquiry?</a></p>
     </form>
 @stop

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <link rel="icon" href="{{asset('assets/img/logos/brookside-favicon.jpeg')}}" type="image/x-icon" />
+    @yield('title')
     <!-- Include all required JS/CSS global files -->
     @include('includes/globalLinks')
     <!-- Include any page-specific links -->
