@@ -14,7 +14,7 @@ class AddEmailTypeIdToEmailTable extends Migration
     public function up()
     {
         Schema::table('email_addresses', function(Blueprint $table){
-            $table->bigInteger('email_address_type_id', false, true);
+            $table->bigInteger('email_address_type_id', false, true)->nullable();
             $table->foreign('email_address_type_id')->references('id')->on('email_address_types');
         });
     }

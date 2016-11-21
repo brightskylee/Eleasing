@@ -14,7 +14,7 @@ class AddPhoneTypeIdToPhoneTable extends Migration
     public function up()
     {
         Schema::table('phone_numbers', function(Blueprint $table){
-            $table->bigInteger('phone_number_type_id', false, true);
+            $table->bigInteger('phone_number_type_id', false, true)->nullable();
             $table->foreign('phone_number_type_id')->references('id')->on('phone_number_types');
         });
     }
