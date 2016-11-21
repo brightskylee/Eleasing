@@ -10,7 +10,7 @@ class EmailAddress extends Model
 
     public $timestamps = false;
 
-    public function customers()
+    public function customer()
     {
         return $this->belongsTo('App\Models\Customers\Customer');
     }
