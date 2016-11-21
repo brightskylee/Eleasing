@@ -14,6 +14,16 @@ class Customer extends Model
         return $this->hasMany('App\Models\Customers\Inquiry');
     }
 
+    public function emailAddresses()
+    {
+        return $this->hasMany('App\Models\Customers\EmailAddress');
+    }
+
+    public function phoneNumbers()
+    {
+        return $this->hasMany('App\Models\Customers\PhoneNumber');
+    }
+
     public function customerPreferences()
     {
         return $this->belongsToMany('App\Models\Customers\CustomerPreference');
