@@ -2,8 +2,17 @@
 
 namespace App\Http\Controllers\CreateNewCustomer;
 
+use App\Http\Controllers\Api\EmailAddressController;
+use App\Http\Controllers\Api\PhoneNumbersController;
 use App\Http\Controllers\Controller;
+use App\Models\Customers\Customer;
+use App\models\customers\EmailAddress;
+use App\models\customers\PhoneNumber;
+use App\Providers\AppServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
+
+use App\Http\Controllers\Api\CustomerController;
 
 class CreateNewCustomerController extends Controller
 {
@@ -143,7 +152,22 @@ class CreateNewCustomerController extends Controller
      */
     public function submitCustomerInformation(Request $request) {
         //todo Submit data to be saved
-        return $request->all();
+
+        $customer_id = CustomerController::store($request)->getOriginalContent();
+        if($request->has("phone")){
+            $phone_id = PhoneNumbersController::store($request)->getOriginalContent();
+            $phone = PhoneNumber::find($phone_id);
+            $phone->customer()->associate($customer_id);
+            $phone->save();
+        }
+        if($request->has("email")){
+            $email_id = EmailAddressController::store($request)->getOriginalContent();
+            $email = EmailAddress::find($email_id);
+            $email->customer()->associate($customer_id);
+            $email->save();
+        }
+        return $customer_id;
+//        return $request->all();
     }
 
     /*
