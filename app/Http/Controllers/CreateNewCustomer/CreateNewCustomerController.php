@@ -18,30 +18,6 @@ use App\Http\Controllers\Api\CustomerController;
 class CreateNewCustomerController extends Controller
 {
     /*
-     * Function: Loads the form to display
-     * available options for contact types
-     */
-    public function start() {
-        return view('createNewCustomer.start');
-    }
-
-    public function emailInquiry() {
-        return view('createNewCustomer.emailInquiry');
-    }
-
-    public function phoneInquiry() {
-        return view('createNewCustomer.phoneInquiry');
-    }
-
-    public function specialEventInquiry() {
-        return view('createNewCustomer.specialEventInquiry');
-    }
-
-    public function unqualifiedInquiry() {
-        return view('createNewCustomer.unqualifiedInquiry');
-    }
-
-    /*
      * Function: Based on the selected contact type,
      * a specific form is presented to the user
      *
