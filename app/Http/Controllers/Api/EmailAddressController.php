@@ -42,7 +42,7 @@ class EmailAddressController extends Controller
         $email->is_primary = $request->input("isPrimary", 1);
         $email->saveOrFail();
 
-        return response($email->id, 201);
+        return response($email, 201);
     }
 
     /**

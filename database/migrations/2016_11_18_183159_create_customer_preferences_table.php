@@ -15,7 +15,10 @@ class CreateCustomerPreferencesTable extends Migration
     {
         Schema::create('customer_preferences', function(Blueprint $table){
             $table->bigIncrements('id');
-            $table->string('preference_name');
+            $table->boolean("roommate_matching");
+            $table->boolean("have_pets");
+            $table->boolean("want_furniture");
+            $table->integer("bedroom_count");
         });
     }
 
