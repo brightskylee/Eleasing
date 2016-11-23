@@ -26,7 +26,7 @@ class Customer extends Model
 
     public function customerPreferences()
     {
-        return $this->belongsToMany('App\Models\Customers\CustomerPreference');
+        return $this->hasOne('App\Models\Customers\CustomerPreference');
     }
 
     public function marketingOutreaches()

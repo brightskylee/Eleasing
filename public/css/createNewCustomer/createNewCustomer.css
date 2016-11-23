@@ -46,6 +46,11 @@
 .preference-container hr {
   margin-bottom: 10px; }
 
+.additional-preference-question {
+  float: left;
+  margin: 0 10px 15px 0;
+  min-width: 350px; }
+
 .selectable-input-image {
   width: 150px;
   min-height: 105px;

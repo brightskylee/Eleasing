@@ -59,8 +59,22 @@
         <div class="preference-container">
             <h2 class="preference-header">Additional Preferences</h2>
             <hr>
-            <div class="guide-box"></div>
+            <p class="additional-preference-question">Does this customer want roommate matching?</p>
+            <input class="additional-preference-input" type="radio" name="roommateMatching" value="yes"> Yes
+            <input class="additional-preference-input" type="radio" name="roommateMatching" value="no"> No
+            <div class="clear"></div>
+            <p class="additional-preference-question">Does this customer have a pet?</p>
+            <input class="additional-preference-input" type="radio" name="pet" value="yes"> Yes
+            <input class="additional-preference-input" type="radio" name="pet" value="no"> No
+            <div class="clear"></div>
+            <p class="additional-preference-question">Desired number of bedrooms?</p>
+            <input class="additional-preference-input" type="checkbox" name="numberOfBedrooms[]" value="1"> 1
+            <input class="additional-preference-input" type="checkbox" name="numberOfBedrooms[]" value="2"> 2
+            <input class="additional-preference-input" type="checkbox" name="numberOfBedrooms[]" value="3"> 3
+            <input class="additional-preference-input" type="checkbox" name="numberOfBedrooms[]" value="4"> 4
+            <div class="clear"></div>
         </div>
+        <div class="clear"></div>
         <div class="preference-container">
             <h2 class="preference-header">Brand Exposure</h2>
             <hr>

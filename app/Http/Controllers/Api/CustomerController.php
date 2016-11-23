@@ -16,7 +16,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customer = new Customer();
+
     }
 
 
@@ -37,7 +38,7 @@ class CustomerController extends Controller
         $customer->birthday = $request->input('birthday', null);
         $customer->saveOrFail();
 
-        return response($customer->id, 201);
+        return response($customer, 201);
     }
 
     /**

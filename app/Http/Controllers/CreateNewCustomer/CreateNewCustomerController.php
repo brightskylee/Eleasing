@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CreateNewCustomer;
 
 use App\Http\Controllers\Api\EmailAddressController;
 use App\Http\Controllers\Api\PhoneNumbersController;
+use App\Http\Controllers\Api\SchoolController;
 use App\Http\Controllers\Controller;
 use App\Models\Customers\Customer;
 use App\models\customers\EmailAddress;
@@ -16,30 +17,6 @@ use App\Http\Controllers\Api\CustomerController;
 
 class CreateNewCustomerController extends Controller
 {
-    /*
-     * Function: Loads the form to display
-     * available options for contact types
-     */
-    public function start() {
-        return view('createNewCustomer.start');
-    }
-
-    public function emailInquiry() {
-        return view('createNewCustomer.emailInquiry');
-    }
-
-    public function phoneInquiry() {
-        return view('createNewCustomer.phoneInquiry');
-    }
-
-    public function specialEventInquiry() {
-        return view('createNewCustomer.specialEventInquiry');
-    }
-
-    public function unqualifiedInquiry() {
-        return view('createNewCustomer.unqualifiedInquiry');
-    }
-
     /*
      * Function: Based on the selected contact type,
      * a specific form is presented to the user
@@ -151,23 +128,29 @@ class CreateNewCustomerController extends Controller
      * and any errors that may be returned
      */
     public function submitCustomerInformation(Request $request) {
-        //todo Submit data to be saved
+        $customer = CustomerController::store($request)->getOriginalContent();
 
-        $customer_id = CustomerController::store($request)->getOriginalContent();
         if($request->has("phone")){
-            $phone_id = PhoneNumbersController::store($request)->getOriginalContent();
-            $phone = PhoneNumber::find($phone_id);
-            $phone->customer()->associate($customer_id);
+            $phone = PhoneNumbersController::store($request)->getOriginalContent();
+
+            $phone->customer()->associate($customer);
             $phone->save();
         }
         if($request->has("email")){
-            $email_id = EmailAddressController::store($request)->getOriginalContent();
-            $email = EmailAddress::find($email_id);
-            $email->customer()->associate($customer_id);
+            $email = EmailAddressController::store($request)->getOriginalContent();
+            $email->customer()->associate($customer);
             $email->save();
         }
-        return $customer_id;
+        return $customer;
 //        return $request->all();
+    }
+
+    public function retrieveContactFormInformation() {
+        //return schools, organizations
+    }
+
+    public function retrieveCustomerPreferencesInformation() {
+        //return individual
     }
 
     /*

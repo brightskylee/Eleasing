@@ -12,17 +12,21 @@
 */
 
 //Create New Customer
-Route::get('/', 'CreateNewCustomer\CreateNewCustomerController@start');
-Route::get('/createNewCustomer', 'CreateNewCustomer\CreateNewCustomerController@start');
+Route::get('/', function() { return view('createNewCustomer.start'); });
+Route::get('/createNewCustomer', function() { return view('createNewCustomer.start'); });
 Route::post('/createNewCustomer/directStartForm', 'CreateNewCustomer\CreateNewCustomerController@directStartForm');
-
-Route::get('/createNewCustomer/emailInquiry', 'CreateNewCustomer\CreateNewCustomerController@emailInquiry');
-Route::get('/createNewCustomer/phoneInquiry', 'CreateNewCustomer\CreateNewCustomerController@phoneInquiry');
-Route::get('/createNewCustomer/specialEventInquiry', 'CreateNewCustomer\CreateNewCustomerController@specialEventInquiry');
-
+//Display of forms required for create new customer
+Route::get('/createNewCustomer/emailInquiry', function() { return view('createNewCustomer.emailInquiry'); });
+Route::get('/createNewCustomer/phoneInquiry', function() { return view('createNewCustomer.phoneInquiry'); });
+Route::get('/createNewCustomer/specialEventInquiry', function() { return view('createNewCustomer.specialEventInquiry'); });
+Route::get('/createNewCustomer/unqualifiedInquiry', function() { return view('createNewCustomer.unqualifiedInquiry'); });
 Route::post('/createNewCustomer/customerPreferences', 'CreateNewCustomer\CreateNewCustomerController@customerPreferences');
-Route::get('/createNewCustomer/unqualifiedInquiry', 'CreateNewCustomer\CreateNewCustomerController@unqualifiedInquiry');
-
+//Submit of all collected information for create new customer
 Route::post('/createNewCustomer/submitCustomerInformation', 'CreateNewCustomer\CreateNewCustomerController@submitCustomerInformation');
+
+////Individual inquiry page
+//Route::get('/inquiry/{customer}', function (App\Customers\Customer $customer) {
+//    return $customer;
+//});
 
 Auth::Routes();

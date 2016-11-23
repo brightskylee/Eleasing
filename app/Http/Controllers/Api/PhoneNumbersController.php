@@ -42,7 +42,7 @@ class PhoneNumbersController extends Controller
         $phone->is_primary = $request->input("isPrimary", 1);
         $phone->saveOrFail();
 
-        return response($phone->id, 201);
+        return response($phone, 201);
 
     }
 

@@ -12,6 +12,6 @@ class CustomerPreference extends Model
 
     public function customers()
     {
-        return $this->belongsToMany('App\Models\Customers\Customer');
+        return $this->belongsTo('App\Models\Customers\Customer');
     }
 }
