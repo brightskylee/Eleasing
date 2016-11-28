@@ -145,14 +145,6 @@ class CreateNewCustomerController extends Controller
 //        return $request->all();
     }
 
-    public function retrieveContactFormInformation() {
-        //return schools, organizations
-    }
-
-    public function retrieveCustomerPreferencesInformation() {
-        //return individual
-    }
-
     /*
      * Function: Build an array with all request input
      * @param $requestData array | all form data provided

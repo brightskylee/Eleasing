@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ elixir('css/createNewCustomer/createNewCustomer.css') }}">
     <script src="{{ elixir("js/createNewCustomer/createNewCustomer.js") }}"></script>
     <script src="{{ elixir("js/createNewCustomer/phoneInquiry.js") }}"></script>
+    <script src="{{ elixir("js/createNewCustomer/customerPreferences.js") }}"></script>
 @stop
 
 @section('content')

@@ -55,4 +55,9 @@ elixir(function(mix) {
             'createNewCustomer/specialEventInquiry.js'
     ],
     'public/js/createNewCustomer/specialEventInquiry.js');
+
+    mix.scripts([
+        'createNewCustomer/customerPreferences.js'
+    ],
+    'public/js/createNewCustomer/customerPreferences.js');
 });

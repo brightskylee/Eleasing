@@ -24,9 +24,7 @@ Route::post('/createNewCustomer/customerPreferences', 'CreateNewCustomer\CreateN
 //Submit of all collected information for create new customer
 Route::post('/createNewCustomer/submitCustomerInformation', 'CreateNewCustomer\CreateNewCustomerController@submitCustomerInformation');
 
-////Individual inquiry page
-//Route::get('/inquiry/{customer}', function (App\Customers\Customer $customer) {
-//    return $customer;
-//});
+//Individual inquiry page
+Route::get('inquiry/customer/{customer}', 'InquiryCustomer\InquiryCustomerController@index');
 
 Auth::Routes();
